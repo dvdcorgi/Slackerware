@@ -13,6 +13,15 @@ namespace SlackService
     {
         [OperationContract]
         string GetData(int value);
+
+        [OperationContract]
+        bool AddEntry(tblEntry entry);
+
+        [OperationContract]
+        List<tblEntry> SearchEntry(string title);
+
+        [OperationContract]
+        bool UpdateEntry(tblEntry entry);
     }
 
 }
