@@ -55,7 +55,7 @@ namespace SlackService
                 var entryQuery = (from a in db.tblEntries
                                   where a.Id == entry.Id
                                   select a).FirstOrDefault();
-                entryQuery = entry;
+                entryQuery.Description = entry.Description;
                 db.SaveChanges();
                 return true;
             }

@@ -57,6 +57,7 @@
             this.wCFCRUDToolStripMenuItem.Name = "wCFCRUDToolStripMenuItem";
             this.wCFCRUDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.wCFCRUDToolStripMenuItem.Text = "WCF CRUD";
+            this.wCFCRUDToolStripMenuItem.Click += new System.EventHandler(this.wCFCRUDToolStripMenuItem_Click);
             // 
             // FormMain
             // 

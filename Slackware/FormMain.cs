@@ -16,5 +16,11 @@ namespace Slackware
         {
             InitializeComponent();
         }
+
+        private void wCFCRUDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormWCFCrud frmCRUD = new FormWCFCrud();
+            frmCRUD.ShowDialog();
+        }
     }
 }

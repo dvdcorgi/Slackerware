@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceFunc" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SlackService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceFunc_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IServiceFunc_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceFunc_AddEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEntry" />
+  </wsdl:message>
+  <wsdl:message name="IServiceFunc_AddEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceFunc_SearchEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchEntry" />
+  </wsdl:message>
+  <wsdl:message name="IServiceFunc_SearchEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceFunc_UpdateEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEntry" />
+  </wsdl:message>
+  <wsdl:message name="IServiceFunc_UpdateEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEntryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceFunc">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceFunc/GetData" message="tns:IServiceFunc_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceFunc/GetDataResponse" message="tns:IServiceFunc_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceFunc/AddEntry" message="tns:IServiceFunc_AddEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceFunc/AddEntryResponse" message="tns:IServiceFunc_AddEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceFunc/SearchEntry" message="tns:IServiceFunc_SearchEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceFunc/SearchEntryResponse" message="tns:IServiceFunc_SearchEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceFunc/UpdateEntry" message="tns:IServiceFunc_UpdateEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceFunc/UpdateEntryResponse" message="tns:IServiceFunc_UpdateEntry_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceFunc" type="tns:IServiceFunc">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IServiceFunc/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEntry">
+      <soap:operation soapAction="http://tempuri.org/IServiceFunc/AddEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchEntry">
+      <soap:operation soapAction="http://tempuri.org/IServiceFunc/SearchEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntry">
+      <soap:operation soapAction="http://tempuri.org/IServiceFunc/UpdateEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceFunc">
+    <wsdl:port name="BasicHttpBinding_IServiceFunc" binding="tns:BasicHttpBinding_IServiceFunc">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/SlackService/ServiceURL/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
